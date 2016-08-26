@@ -20,7 +20,7 @@ $autoload['manager'] = array(
  * This table will contain the list of entity which will be load automatcally
  */
 $autoload['entity'] = array(
-    
+    'metting'
 );
 
 /**

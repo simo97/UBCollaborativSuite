@@ -8,7 +8,7 @@ require_once 'core/FrameKernel.php';
 
 use core\FrameKernel as FKernel;
 
-define('APP', 'localhost/frame');
+define('APP', 'localhost/UB_Collaboration');
 //$router = new FRouter\FrameRouter();
 //$router->route_url();
     $kernel = new FKernel\FrameKernel();
