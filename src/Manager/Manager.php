@@ -1,9 +1,5 @@
 <?php
 
-require_once './core/FrameDataBase.php';
-
-use core\FrameDataBase\FrameDataBase as FrameDataBase;
-
 /**
  * Description of Manager
  * This class is the upper class for all the manager of the application 
@@ -12,7 +8,7 @@ use core\FrameDataBase\FrameDataBase as FrameDataBase;
  *
  * @author adonis_97
  */
-class Manager extends FrameDataBase {
+class Manager extends Frame\Core\FrameDataBase {
     //put your code here
     protected $table_name;
     protected $id_name;

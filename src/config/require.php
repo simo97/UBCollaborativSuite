@@ -4,3 +4,4 @@
     define('CSS', ASSETS . '/assets/css');
     define('JS', ASSETS . '/assets/js');
     define('IMG', ASSETS . '/assets/img');
+    define('APP_NAME','UB_Collaboration');

@@ -2,13 +2,6 @@
 
 namespace Frame\Core;
 
-//require_once 'FrameView.php';
-//require_once 'FrameException.php';
-
-use core\FrameView as FView;
-use core\FrameException as FException;
-
-
 /**
  * This class will offer an interface to manage databases just as and simple 
  * ORM

@@ -1,9 +1,7 @@
 <?php
-include_once './core/FrameController.php';
 
-use core\FrameController as FController;
 
-class ControlleurDefault extends  FController\FrameController {
+class ControlleurDefault extends \Frame\Core\Controller {
     public function __construct($arg = null){
 	parent::__construct($arg);
     }	

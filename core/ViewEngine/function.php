@@ -26,5 +26,6 @@ function asset($type= array()){
 }
 
 function getAsset($assets = null){
-	echo 'http://'.$_SERVER['SERVER_NAME'].'/'.APP_NAME.'/assets/'.$assets.'/';
+    //echo 'http://'.$_SERVER['SERVER_NAME'].'/'.APP_NAME.'/assets/'.$assets.'/';
+    echo 'http://localhost/'.APP_NAME.'/assets/'.$assets.'/';
 }
