@@ -19,7 +19,7 @@ class UtilisateurManager extends Manager {
     
     public function authentificate($login, $pass){
         
-        $sql = 'select * from utilisateur where loggin = :login and pass = sha1(:pass) ';
+        $sql = 'select * from view_user where loggin = :login and pass = sha1(:pass) ';
         $param = array(
             ':login'=> $login,
             ':pass'=>$pass
@@ -28,7 +28,8 @@ class UtilisateurManager extends Manager {
         $res = $this->execute_query($sql, $param);
         if($data = $res->fetch()){//if the user exist
             
-            return $this->loadEntity('utilisateur',$res);
+            //we create the entity here and return it
+            return $this->loadEntity('utilisateur',$data);
         }else{
             return false;
         }
@@ -37,5 +38,34 @@ class UtilisateurManager extends Manager {
     
     public function unauthentificate(){
         
+    }
+    
+    public function addUser(UtilisateurEntity $user){
+        $sql = 'INSERT INTO utilisateur (nom,prenom,loggin,pass,matricule,type_user)'
+                . 'values(:nom,:prenom,:loggin,sha(:pass),:matricule,:type_user)';
+        
+        $param =  array(
+            ':nom'=>$user->getNom(),
+            ':prenom'=> $user->getPrenom(),
+            ':loggin'=>$user->getLoggin(),
+            ':pass'=>$user->getPass(),
+            ':matricule'=>$user->getMatricule(),
+            ':type_user'=>$_POST['type_utilisateur']
+        );
+        
+        
+        $result = $this->execute_query($sql, $param);
+        return $result;
+    }
+    
+    public function getList(){
+        $sql = "select * from view_user";
+        $list =  $this->execute_query($sql);
+        $list = $list->fetchAll();
+//        echo '<pre>';
+//        var_dump($list);// $list;
+//        echo '</pre>';
+//        die();
+        return $list;
     }
 }

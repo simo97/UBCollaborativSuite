@@ -57,7 +57,7 @@ class FrameKernel
         $controlleur = $response->getControllerClass();
         $controlleur = new $controlleur;//on instancie le controlleur
         //$this->control_user();
-
+        
         if ($reflect_controlleur->getParameters()) {//si la methode prend des parametres on lance avec GET
 
             $reflect_controlleur->invoke($controlleur, $_GET);

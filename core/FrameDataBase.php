@@ -53,18 +53,21 @@ class FrameDataBase {
     public function execute_query($query,$param =null){
         try{
             if($param == null){
-                return $this->getDB()->exec($query);
+                $result = $this->getDB()->query($query);
+                
+                return $result;
             }
             $result = $this->getDB()->prepare($query);
-            return $result->execute($param);
+            $result->execute($param);
+            return $result;
         }catch (\Exception $ex){//exception non reconnu
-            $view = new FView\FrameView();
+            $view = new FrameView();
             $view->generateErrorException($ex);
-        }  catch (FException\FrameException $ex){//exception Frame
-            $view = new FView\FrameView();
+        }  catch (FrameException $ex){//exception Frame
+            $view = new FrameView();
             $view->generateErrorFrameException($ex);
         }  catch (\PDOException $pdo_ex){//exception PDO
-            $view = new FView\FrameView();
+            $view = new FrameView();
             $view->generateErrorPDOExceptio($ex);
         }
     }

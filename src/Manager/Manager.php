@@ -63,6 +63,7 @@ class Manager extends Frame\Core\FrameDataBase {
     
     public function setTableName($tab_name){
         $this->table_name = $tab_name;
+        return $this;
     }
     
     /**

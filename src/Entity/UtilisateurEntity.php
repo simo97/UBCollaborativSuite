@@ -13,61 +13,61 @@ protected $pass;
 protected $etat; 
 protected $matricule; 
 protected $numero; 
-protected $type; 
+protected $libelle_type; 
 
 public function getId_user (){
-	return $this->Id_user ;
+	return $this->id_user ;
 }
 public function getNom (){
-	return $this->Nom ;
+	return $this->nom ;
 }
 public function getPrenom (){
-	return $this->Prenom ;
+	return $this->prenom ;
 }
 public function getLoggin (){
-	return $this->Loggin ;
+	return $this->loggin ;
 }
 public function getPass (){
-	return $this->Pass ;
+	return $this->pass ;
 }
 public function getEtat (){
-	return $this->Etat ;
+	return $this->etat ;
 }
 public function getMatricule (){
-	return $this->Matricule ;
+	return $this->matricule ;
 }
 public function getNumero (){
-	return $this->Numero ;
+	return $this->numero ;
 }
-public function getType (){
-	return $this->Type ;
+public function getLibelle_type (){
+	return $this->libelle_type ;
 }
 public function setId_user ($value){
-	 $this->Id_user = $value;
+	 $this->id_user = $value;
 }
 public function setNom ($value){
-	 $this->Nom = $value;
+	 $this->nom = $value;
 }
 public function setPrenom ($value){
-	 $this->Prenom = $value;
+	 $this->prenom = $value;
 }
 public function setLoggin ($value){
-	 $this->Loggin = $value;
+	 $this->loggin = $value;
 }
 public function setPass ($value){
-	 $this->Pass = $value;
+	 $this->pass = $value;
 }
 public function setEtat ($value){
-	 $this->Etat = $value;
+	 $this->etat = $value;
 }
 public function setMatricule ($value){
-	 $this->Matricule = $value;
+	 $this->matricule = $value;
 }
 public function setNumero ($value){
-	 $this->Numero = $value;
+	 $this->numero = $value;
 }
-public function setType ($value){
-	 $this->Type = $value;
+public function setLibelle_type ($value){
+	 $this->libelle_type = $value;
 }
 public function hydrate($param = NULL){
 	if(isset($param['id_user'])){
@@ -94,8 +94,8 @@ public function hydrate($param = NULL){
 	if(isset($param['numero'])){
 		$this->setNumero($param['numero']);
 	}
-	if(isset($param['type'])){
-		$this->setType($param['type']);
+	if(isset($param['libelle_type'])){
+		$this->setLibelle_type($param['libelle_type']);
 	}
 }
 }

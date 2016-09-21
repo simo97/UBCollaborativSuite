@@ -1,15 +1,28 @@
-<ul id="drop_etud" class="dropdown-content">
-    <li><a href="#"><i class="fa fa-user"></i>Mon compte</a></li>
-    <li><a href="default/default/unauth"><i class="fa fa-exit"></i>Deconnection</a></li>
+<ul id="drop_menu" class="dropdown-content">
+  <li><a href="#!">Mon compte</a></li>
+  <li><a href="#!">Mail</a></li>
+  <li><a href="#!">Cour</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
 </ul>
-<div class="navbar-fixed col s10">
-    <nav class="red">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo left">UB Messenger</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
-          <ul  class="right hide-on-med-and-down">
-              <li><a class="dropdown-button" data-activates="drop_etud" href="#"><?php echo $_SESSION['nom'] ?>&nbsp;<i class="fa fa-angle-down"></i></a></li>
-          </ul>
-        </div>
-      </nav>
-</div>
+<header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed z-depth-2">
+        <nav class="blue-grey">
+            <div class="nav-wrapper">
+                <ul class="left">
+                    &nbsp;&nbsp;&nbsp;
+                  <li><h4 class="logo-wrapper"><a href="#" class="brand-logo darken-1"></a> <span class="logo-text">UB Collaboration Suite</span></h4></li>
+                </ul>
+                
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="dropdown-button" data-activates='drop_menu' href="#"> <i class="fa fa-bars fa-2x " aria-hidden="true"></i></a></li>
+                </ul>
+                
+                <!-- notifications-dropdown -->
+                
+            </div>
+        </nav>
+    </div>
+    <!-- end header nav-->
+</header>

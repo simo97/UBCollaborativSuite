@@ -300,16 +300,16 @@
             //return (isset($this->module_loaded[$name]) ? $this->module_loaded[$name] : NULL );
             $name = ucfirst(strtolower($name));
     
-            if (isset($this->module_loaded[$name])) {
+            //if (isset($this->module_loaded[$name])) {
                 //echo $this->module_loaded[$name];
                 $this->module_loaded[$name] = $module;
-            } else {
-                $ex = new Exception(array(
-                    'message' => 'Instance of  Module ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
-                    'status' => 404
-                ));
-                $this->view->generateErrorFrameException($ex);
-            }
+//            } else {
+//                $ex = new Exception(array(
+//                    'message' => 'Instance of  Module ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
+//                    'status' => 404
+//                ));
+//                $this->view->generateErrorFrameException($ex);
+//            }
         }
     
         /**
@@ -335,15 +335,15 @@
         {
             //return (isset($this->manager_loaded[$name]) ? $this->module_loaded[$name] : NULL );
             $name = ucfirst(strtolower($name));
-            if (isset($this->manager_loaded[$name])) {
+            //if (isset($this->manager_loaded[$name])) {
                 $this->manager_loaded[$name] = $menager;
-            } else {
-                $ex = new Exception(array(
-                    'message' => 'Instance of  manager ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
-                    'status' => 404
-                ));
-                $this->view->generateErrorFrameException($ex);
-            }
+            //} else {
+//                $ex = new Exception(array(
+//                    'message' => 'Instance of  manager ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
+//                    'status' => 404
+//                ));
+//                $this->view->generateErrorFrameException($ex);
+//            }
         }
     
         /**
@@ -366,16 +366,16 @@
         public function _set_class($name, $class)
         {
             $name = ucfirst(strtolower($name));
-            if (isset($this->class_loaded[$name])) {
+//            if (!isset($this->class_loaded[$name])) {
     
                 $this->class_loaded[$name] = $class;
-            } else {
-                $ex = new Exception(array(
-                    'message' => 'Instance of class ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
-                    'status' => 404
-                ));
-                $this->view->generateErrorFrameException($ex);
-            }
+//            } else {
+//                $ex = new Exception(array(
+//                    'message' => 'Instance of class ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
+//                    'status' => 404
+//                ));
+//                $this->view->generateErrorFrameException($ex);
+//            }
         }
     
         /**
@@ -398,15 +398,15 @@
         public function _set_entity($name, $entity)
         {
             $name = ucfirst(strtolower($name));
-            if (isset($this->entity_loaded[$name])) {
+            //if (!isset($this->entity_loaded[$name])) {
                 $this->entity_loaded[$name] = $entity;
-            } else {
-                $ex = new Exception(array(
-                    'message' => 'Instance of entity ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
-                    'status' => 404
-                ));
-                $this->view->generateErrorFrameException($ex);
-            }
+//            } else {
+//                $ex = new Exception(array(
+//                    'message' => 'Instance of entity ' . $name . '. not found  Hint:  may it has not declared to be  autoloaded',
+//                    'status' => 404
+//                ));
+//                $this->view->generateErrorFrameException($ex);
+//            }
         }
     
     
@@ -449,7 +449,8 @@
          */
         public function redirect($bundle, $controller, $method = NULL, $args = NULL)
         {
-            $addr = 'location:http://' . APP . '/' . $bundle . '/' . $controller;
+            $addr = 'location:http://localhost/' . APP_NAME . '/' . $bundle . '/' . $controller;
+            
             if ($method != NULL) {
                 $addr .= '/' . $method;
             }
